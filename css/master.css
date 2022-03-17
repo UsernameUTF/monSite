@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.container {
+    width: 80%;
+    margin: 0 auto 0;   
+}
+header {
+    width: 100%;
+    background: rgb(228 194 194);
+    box-shadow: 0 0 8px gray;
+   
+}
+header .container {
+   width: 80%;
+   margin: 0 auto 0;
+}
+header .container nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 40px;
+    flex-wrap: wrap;
+}
+header .container nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 40px;
+    
+
+}
+header .container nav ul li {
+    flex-grow: 1;
+    width:50px;
+    height: 100%;
+ 
+}
+header .container nav ul li a {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    overflow: hidden;
+    text-transform: capitalize;
+}
+header .container nav ul li a:before{
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    background-color:white;
+    top: 0;
+    left: -100%;
+    transition: .4s;
+}
+
+header .container nav ul li a:hover{
+    background-color:black;
+    color: white;
+    transition: 0.3s;
+}
+header .container nav ul li a:hover::before {
+    left: 0;
+}
+section {
+    height: calc(100vh - 40px);
+    position: relative;
+   
+}
+section:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #eee;
+    z-index: -1;
+    clip-path: polygon(0 0, 50% 100%, 100% 100%);
+}
+section .container {
+     height: 80%;   
+}
+section .container .landing {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+section .container .landing .description {
+    width: 50%;
+}
+section .container .landing .description h1 {
+    margin-bottom: 10px;
+    font-size: calc(1em + 3vw);
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+section .container .landing .description p {
+    font-size: calc(.5em + .8vw);
+    font-weight: lighter;
+    line-height: 1.4;
+    height: fit-content;
+    position: relative;
+    margin-left: 10px;
+    
+}
+section .container .landing .description p::before{
+    width: 4px;
+    height: 100%;
+    content:"";
+    position: absolute;
+    background-color: gray;
+    left: -10px;
+
+}
+section .container .landing .image {
+  width: 50%;
+  height: 100%;
+}
+section .container .landing .image img {
+   
+}
+@media (max-width:576px) {
+    header .container nav {
+        text-align: center;
+    }
+    header .container nav h1 {
+        width: 100%;
+    }
+    header .container nav ul li {
+        height: 30px;
+    }
+    header .container nav ul{
+       width: 100%;
+       justify-content: space-evenly;
+       text-align: center;
+    }
+    section .container .landing .image {
+        display:none;
+    }
+    section .container .landing .description {
+        width: 100%;
+        text-align: center;
+    }
+    section .container .landing .description p::before{
+        display: none;
+    }
+}
