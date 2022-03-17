@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: monospace;
 }
 * {
     box-sizing: border-box;
@@ -13,8 +14,10 @@ body {
 }
 header {
     width: 100%;
-    background: rgb(228 194 194);
+    background-color: rgb(2 6 9);
     box-shadow: 0 0 8px gray;
+    color: cornsilk;
+    font-size: calc(0.7rem + .5vw);
    
 }
 header .container {
@@ -25,7 +28,7 @@ header .container nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 40px;
+    min-height: 60px;
     flex-wrap: wrap;
 }
 header .container nav ul {
@@ -53,6 +56,7 @@ header .container nav ul li a {
     position:relative;
     overflow: hidden;
     text-transform: capitalize;
+    color: white;
 }
 header .container nav ul li a:before{
     content: "";
@@ -74,22 +78,21 @@ header .container nav ul li a:hover::before {
     left: 0;
 }
 section {
-    height: calc(100vh - 40px);
+    height: calc(100vh - 60px);
     position: relative;
-   
+    background:  no-repeat  url(../image/photo-1499084732479-de2c02d45fcc.jpg);
+    background-position-x: left;
+    background-repeat: repeat-x;
+    color: rgb(249 205 222);
+    background-position-y: center;
+    
 }
-section:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: #eee;
-    z-index: -1;
-    clip-path: polygon(0 0, 50% 100%, 100% 100%);
-}
+
 section .container {
      height: 80%;   
+     position: relative;
 }
+
 section .container .landing {
     display: flex;
     align-items: center;
@@ -122,13 +125,8 @@ section .container .landing .description p::before{
     left: -10px;
 
 }
-section .container .landing .image {
-  width: 50%;
-  height: 100%;
-}
-section .container .landing .image img {
-   
-}
+
+
 @media (max-width:576px) {
     header .container nav {
         text-align: center;
